@@ -25,3 +25,11 @@
 %animationSlow{
   @include transition(0.3s all cubic-bezier(0,0,0,0.4));
 }
+
+
+%flex-container{
+  @include flexbox;
+  @include justify-content(space-between);
+  @include flex-wrap(wrap);
+  width: 100%;  
+}

@@ -1,0 +1,90 @@
+.results{
+  padding: 20px 0;
+  overflow: hidden;
+  @extend %flex-container;
+  &-card{
+    @include flex-basis(calc(25% - 15px));
+    width: calc(25% - 30px);
+    float: left;
+    background: $white;
+    margin: 10px 0;
+    &:hover{
+      .results-card--header__hover{
+        opacity: 1;
+      }
+      .results-card--image{
+        @include filter(blur(5px))
+        &:before{
+          opacity: 0;
+        }
+      }
+    }
+    &--header{
+      position: relative;
+      padding-top: 100%;
+      cursor: pointer;
+      &__hover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.4);
+        opacity: 0;
+        color: $white;
+        @extend %animation;
+        @include flexbox;
+        @include flex-direction(column);
+        @include align-items(center);
+        @include justify-content(center);
+        img{
+          width: 60%;
+        }
+      }
+    }
+    &--image{
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include filter(blur(0px));
+      line-height: 0;
+      &:before{
+        content: '';
+        position: absolute;
+        top : 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 1;
+        background-color: rgba(0,0,0,0.45);
+        background-repeat: no-repeat;
+        background-position: 8% 92%;
+        background-size: 40px;
+        @extend %animation;
+        cursor: pointer;
+      }
+      &.album{
+        &:before{
+          background-image: url(../img/album-icon@2x.png);
+        }
+      }
+      &.artist{
+        &:before{
+          background-image: url(../img/artist-icon@2x.png);
+          background-size: 28px;
+          background-position: 10% 88%;
+        }
+      }
+      img{
+        max-width: 100%;
+      }
+    }
+    &--title{
+      cursor: pointer;
+      padding: 20px;
+      color: $black;
+      line-height: 18px;
+      font-size: 16px;
+    }
+  }
+}
