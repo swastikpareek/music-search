@@ -1,3 +1,18 @@
+%ralewayBold{
+  font-family: $RBold, Arial , sans-serif;
+}
+
+%ralewayMedium{
+  font-family: $RMedium, Arial , sans-serif;
+}
+
+%ralewayRegular{
+  font-family: $RRegular, Arial , sans-serif;
+}
+
+%ralewayLight{
+  font-family: $RLight, Arial , sans-serif;
+}
 
 %animationFast{
   @include transition(0.1s all cubic-bezier(0,0,0,0.4));

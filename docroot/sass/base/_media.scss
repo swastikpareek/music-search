@@ -1,0 +1,9 @@
+// media Queuries
+
+$iphone5 : 320px;
+// media Queuries
+
+$ipad : 768px;
+
+$ip5: 'screen and (min-width: #{$iphone5})';
+$ipp: 'screen and (min-width: #{$ipad})';

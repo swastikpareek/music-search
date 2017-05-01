@@ -1,0 +1,97 @@
+.search{
+  &-bar{
+    background: $dark-violet-pallete;
+    color: $white;
+    padding: 10px 0;
+    @media #{$ipp}{
+      padding: 20px 0;
+    }
+    &--region{
+      &--field{
+        max-width: 500px;
+        margin: 0 auto;
+        @include flexbox;
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(center);
+        @media #{$ipp}{
+          background: $white;
+          padding: 5px;
+          @include flex-direction(row);
+          @include justify-content(flex-start);
+          @include rounded(25px);
+        }
+        &--input{
+          background: $white;
+          font-size: 18px;
+          min-width: 100%;
+          @include rounded(20px);
+          line-height: 20px;
+          min-height: 40px;
+          padding: 10px 20px;
+          margin: 10px 0 20px 0;
+          color: $brown-pallete;
+          border: 0;          
+          @media #{$ipp}{
+            @include flex(1);
+            min-height: 30px;
+            background: transparent;
+            line-height: 20px;
+            font-size: 14px;
+            padding: 0 5px 0 20px;   
+            min-width: 0;        
+            margin:0;
+          }
+          &::-webkit-input-placeholder{
+            color: $brown-pallete;
+          }
+          &:focus{
+            outline: none;
+          }
+        }
+        &--button{
+          font-size: 18px;
+          line-height: 20px;
+          padding: 10px 20px;
+          @include rounded(20px);
+          background: $pink-pallete;
+          @media #{$ipp}{
+            min-height: 30px;
+            font-size: 12px;
+            padding: 10px 25px;
+            @include rounded(20px);
+          }
+        }
+      }
+    }
+  }
+  &-results{
+    background: $violet-pallete;
+    &--region{
+      &--content{
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0;
+        @media #{$ipp}{
+          padding: 40px 0;  
+        }
+      }
+    }
+    .initial-screen{
+      display: none;
+      @media #{$ipp}{
+        display: block;
+      }
+      text-align : center;
+      padding: 60px 0;
+      img{
+        width: 160px;
+      } 
+      &--headline{
+        margin-top: 30px;
+        font-size: 24px;
+        color: $light-violet-pallete;        
+      }
+    }
+  }
+}

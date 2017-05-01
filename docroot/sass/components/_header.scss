@@ -1,0 +1,62 @@
+.header{
+  background: $pink-pallete;
+  color: $white;
+  padding: 20px 0;
+  height: 100vh;
+  @media #{$ipp}{
+    padding: 40px 0;
+  }
+  &--region{
+    height: 100%;
+    @include flexbox;
+    @include flex-direction(column);
+    &--top{
+      @include flexbox;
+      @include justify-content(space-between);
+      @include align-items(center);
+      @media #{$ipp}{
+        @include align-items(flex-start);
+      }
+      &--left{
+        &--logo{
+          width:40px;
+          height: 40px;
+          overflow: hidden;
+          @media #{$ipp}{
+            width: 80px;
+            height: auto;
+          }
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+    &--banner{
+      @include flex(1);
+      @include flexbox;
+      @include align-items(center);
+      &--content{
+        max-width: 90%;
+        @extend %animationWrapper;
+        @media #{$ipp}{
+          max-width: 640px;
+        }
+        margin: 0 auto;
+        img{
+          max-width: 100%;
+          height: auto;
+          @extend %rotationAnimationOnce;
+        }
+      }
+    }
+    &--arrow{
+      text-align: center;
+      img{
+        width: 43px;
+        height: auto;
+        @extend %bounceAnimation;
+      }
+    }
+  }
+}

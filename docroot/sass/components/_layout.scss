@@ -1,4 +1,8 @@
+*{
+  box-sizing: border-box;
+}
 body{
+  @extend %ralewayRegular;
   &.initially-hidden{
     opacity: 0;
     @extend %animation;
@@ -10,4 +14,11 @@ body{
 
 .music-search{
 
+}
+
+.region{
+  padding: 0 10px;
+  @media #{$ipp}{
+    padding: 0 30px;
+  }
 }

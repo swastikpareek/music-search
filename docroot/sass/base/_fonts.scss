@@ -1,1 +1,53 @@
+$RBold: 'Raleway Bold';
+$RMedium: 'Raleway Medium';
+$RRegular: 'Raleway Regular';
+$RLight: 'Raleway Light';
 
+//urls
+$RBoldEOT: url(../fonts/Raleway-Bold.eot?#iefix);
+$RBoldWOFF: url(../fonts/Raleway-Bold.woff);
+$RBoldTTF: url(../fonts/Raleway-Bold.ttf);
+$RBoldSVG: url(../fonts/Raleway-Bold.svg);
+
+$RMediumEOT: url(../fonts/Raleway-Medium.eot?#iefix);
+$RMediumWOFF: url(../fonts/Raleway-Medium.woff);
+$RMediumTTF: url(../fonts/Raleway-Medium.ttf);
+$RMediumSVG: url(../fonts/Raleway-Medium.svg);
+
+$RRegularEOT: url(../fonts/Raleway-Regular.eot?#iefix);
+$RRegularWOFF: url(../fonts/Raleway-Regular.woff);
+$RRegularTTF: url(../fonts/Raleway-Regular.ttf);
+$RRegularSVG: url(../fonts/Raleway-Regular.svg);
+
+$RLightEOT: url(../fonts/Raleway-Light.eot?#iefix);
+$RLightWOFF: url(../fonts/Raleway-Light.woff);
+$RLightTTF: url(../fonts/Raleway-Light.ttf);
+$RLightSVG: url(../fonts/Raleway-Light.svg);
+
+@font-face {
+  font-family: $RBold;
+  src: $RBoldEOT format('embedded-opentype'), $RBoldWOFF format('woff'), $RBoldTTF format('truetype'), $RBoldSVG format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $RMedium;
+  src: $RMediumEOT format('embedded-opentype'), $RMediumWOFF format('woff'), $RMediumTTF format('truetype'), $RMediumSVG format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $RRegular;
+  src: $RRegularEOT format('embedded-opentype'), $RRegularWOFF format('woff'), $RRegularTTF format('truetype'), $RRegularSVG format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $RLight;
+  src: $RLightEOT format('embedded-opentype'), $RLightWOFF format('woff'), $RLightTTF format('truetype'), $RLightSVG format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

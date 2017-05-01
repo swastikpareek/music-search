@@ -1,0 +1,12 @@
+.footer{
+  color: $white;
+  background: $dark-violet-pallete;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 18px;
+  padding: 30px 20px;
+  @media #{$ipp}{
+    font-size: 18px;
+    padding: 30px 0;
+  }
+}

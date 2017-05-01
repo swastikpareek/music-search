@@ -1,0 +1,48 @@
+
+
+%bounceAnimation {
+  @include prefix(animation, bounce 1.2s cubic-bezier(0,0,0,0.4) infinite);
+}
+
+@keyframes bounce {
+  0% {
+    @include transform(scale(1) translateY(-15px));
+    // @include transform();
+  }
+  20% {
+      @include transform(scale(1.3) translateY(15px));
+  }
+  100% {
+    @include transform(scale(1) translateY(-15px));
+  }
+}
+
+
+%animationWrapper{
+  @include prefix(transform-style, preserve-3d);
+  @include prefix(perspective, 800px);
+}
+
+%rotationAnimationOnce{
+  @include prefix(animation, rotation 0.2s cubic-bezier(0,0,0,0.4));
+  @include prefix(animation-iteration-count, 2);
+  @include prefix(animation-delay, 0.5s);
+}
+
+@keyframes rotation {
+  0% {
+    @include transform(rotateZ(0deg));
+  }
+  25% {
+    @include transform(rotateZ(-6deg));
+  }
+  50% {
+    @include transform(rotateZ(0deg));
+  }
+  75% {
+    @include transform(rotateZ(6deg));
+  }
+  100% {
+    @include transform(rotateZ(0deg));
+  }
+}
