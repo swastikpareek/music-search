@@ -1,0 +1,9 @@
+body.initially-hidden {
+  transition: 0.2s all cubic-bezier(0, 0, 0, 0.4); }
+
+body.initially-hidden {
+  opacity: 0; }
+  body.initially-hidden.ng-loaded {
+    opacity: 1; }
+
+/*# sourceMappingURL=styles.css.map */

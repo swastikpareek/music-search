@@ -1,0 +1,22 @@
+<html ng-app="musicSearch">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+  <title>Music Search</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body ng-controller="mainCtrl" class="initially-hidden" ng-class="{'ng-loaded' : controllerReady}">
+
+  <div class="music-search">
+    <div>{{helloText}}</div>
+  </div>
+
+  <!-- Adding Script in the last for performance -->
+  <script type="text/javascript" src="js/dependencies.min.js"></script>
+  <script type="text/javascript" src="js/config.js"></script>
+  <script type="text/javascript" src="js/assets/constants.js"></script>
+  <script type="text/javascript" src="js/assets/main.js"></script>
+</body>
+</html>

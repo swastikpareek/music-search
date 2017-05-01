@@ -1,0 +1,12 @@
+
+%animationFast{
+  @include transition(0.1s all cubic-bezier(0,0,0,0.4));
+}
+
+%animation{
+  @include transition(0.2s all cubic-bezier(0,0,0,0.4));
+}
+
+%animationSlow{
+  @include transition(0.3s all cubic-bezier(0,0,0,0.4));
+}

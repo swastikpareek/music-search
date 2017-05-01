@@ -1,0 +1,13 @@
+body{
+  &.initially-hidden{
+    opacity: 0;
+    @extend %animation;
+    &.ng-loaded{
+      opacity: 1;
+    }
+  }
+}
+
+.music-search{
+
+}
