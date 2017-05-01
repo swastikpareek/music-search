@@ -3,7 +3,7 @@ body.initially-hidden {
 
 body.initially-hidden {
   opacity: 0; }
-  body.initially-hidden.ng-loaded {
+  body.initially-hidden.has-loaded {
     opacity: 1; }
 
 /*# sourceMappingURL=styles.css.map */

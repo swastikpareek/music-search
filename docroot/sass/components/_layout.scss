@@ -2,7 +2,7 @@ body{
   &.initially-hidden{
     opacity: 0;
     @extend %animation;
-    &.ng-loaded{
+    &.has-loaded{
       opacity: 1;
     }
   }

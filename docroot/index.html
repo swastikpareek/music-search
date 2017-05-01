@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html ng-app="musicSearch">
 <head>
   <meta charset="utf-8">
@@ -5,18 +6,30 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
   <title>Music Search</title>
+  <!-- Restting and normalising css for browser consistency-->
+  <link rel="stylesheet" type="text/css" href="bower_components/reset-css/reset.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css">
+   <!-- Importing local css files -->
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<body ng-controller="mainCtrl" class="initially-hidden" ng-class="{'ng-loaded' : controllerReady}">
+<body ng-controller="mainCtrl" class="initially-hidden" ng-class="{'has-loaded' : controllerReady}">
 
-  <div class="music-search">
-    <div>{{helloText}}</div>
+  <div class="application">
+    <div class="header" ng-include="'html/header.html'"></div>
+    <div class="content" ng-include="'html/content.html'"></div>
+    <div class="footer" ng-include="'html/footer.html'"></div>
   </div>
 
   <!-- Adding Script in the last for performance -->
   <script type="text/javascript" src="js/dependencies.min.js"></script>
+  <!-- Importing configuration for the app -->
   <script type="text/javascript" src="js/config.js"></script>
-  <script type="text/javascript" src="js/assets/constants.js"></script>
-  <script type="text/javascript" src="js/assets/main.js"></script>
+
+  <!-- Importing constants needed -->
+  <script type="text/javascript" src="js/assets/constants/constants.js"></script>
+
+  <!-- Importing main controller file -->
+  <script type="text/javascript" src="js/assets/controllers/main.js"></script>
+
 </body>
 </html>
