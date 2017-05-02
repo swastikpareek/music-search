@@ -1,6 +1,6 @@
 <div class="search-bar--region region">
   <div class="search-bar--region--field">
-    <input class="search-bar--region--field--input" type="text" placeholder="Search for artist or album title!"></input>
-    <div class="search-bar--region--field--button">SEARCH</div>
+    <input class="search-bar--region--field--input" type="text" placeholder="Search for artist or album title!" ng-model="search.query"></input>
+    <div class="search-bar--region--field--button" ng-click="getSearchResults()">SEARCH</div>
   </div>
 </div>

@@ -31,15 +31,15 @@
           padding: 10px 20px;
           margin: 10px 0 20px 0;
           color: $brown-pallete;
-          border: 0;          
+          border: 0;
           @media #{$ipp}{
             @include flex(1);
             min-height: 30px;
             background: transparent;
             line-height: 20px;
             font-size: 14px;
-            padding: 0 5px 0 20px;   
-            min-width: 0;        
+            padding: 0 5px 0 20px;
+            min-width: 0;
             margin:0;
           }
           &::-webkit-input-placeholder{
@@ -68,12 +68,15 @@
   &-results{
     background: $violet-pallete;
     &--region{
+      @media #{$ipp}{
+        min-height: 420px;
+      }
       &--content{
         max-width: 980px;
         margin: 0 auto;
         padding: 0;
         @media #{$ipp}{
-          padding: 40px 0;  
+          padding: 40px 0;
         }
       }
     }
@@ -86,11 +89,11 @@
       padding: 60px 0;
       img{
         width: 160px;
-      } 
+      }
       &--headline{
         margin-top: 30px;
         font-size: 24px;
-        color: $light-violet-pallete;        
+        color: $light-violet-pallete;
       }
     }
   }

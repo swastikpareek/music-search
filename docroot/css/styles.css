@@ -59,8 +59,17 @@
 body {
   font-family: "Raleway Regular", Arial, sans-serif; }
 
-body.initially-hidden, .results-card--header__hover, .results-card--image:before {
+body.initially-hidden {
   transition: 0.2s all cubic-bezier(0, 0, 0, 0.4); }
+
+.results-card--header__hover, .results-card--image:before {
+  transition: 0.3s all cubic-bezier(0, 0, 0, 0.4); }
+
+.results-card--title {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .results {
   display: -moz-flex;
@@ -248,6 +257,9 @@ body {
 
 .search-results {
   background: #383a49; }
+  @media screen and (min-width: 768px) {
+    .search-results--region {
+      min-height: 420px; } }
   .search-results--region--content {
     max-width: 980px;
     margin: 0 auto;
@@ -281,17 +293,22 @@ body {
     margin: 10px 0; }
     .results-card:hover .results-card--header__hover {
       opacity: 1; }
-    .results-card:hover .results-card--image {
+    .results-card:hover .results-card--image img {
       -moz-filter: blur(5px);
       -o-filter: blur(5px);
       -ms-filter: blur(5px);
-      filter: blur(5px); }
-      .results-card:hover .results-card--image:before {
-        opacity: 0; }
+      filter: blur(5px);
+      transform: scale(1.05); }
+    .results-card:hover .results-card--image:before {
+      opacity: 0; }
     .results-card--header {
       position: relative;
       padding-top: 100%;
-      cursor: pointer; }
+      overflow: hidden;
+      cursor: pointer;
+      background-color: #c34473;
+      background-repeat: no-repeat;
+      background-size: contain; }
       .results-card--header__hover {
         position: absolute;
         top: 0;
@@ -319,11 +336,10 @@ body {
       position: absolute;
       top: 0;
       left: 0;
-      -moz-filter: blur(0px);
-      -o-filter: blur(0px);
-      -ms-filter: blur(0px);
-      filter: blur(0px);
-      line-height: 0; }
+      bottom: 0;
+      right: 0;
+      line-height: 0;
+      overflow: hidden; }
       .results-card--image:before {
         content: '';
         position: absolute;
@@ -332,7 +348,8 @@ body {
         right: 0;
         bottom: 0;
         opacity: 1;
-        background-color: rgba(0, 0, 0, 0.45);
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.3);
         background-repeat: no-repeat;
         background-position: 8% 92%;
         background-size: 40px;
@@ -344,7 +361,12 @@ body {
         background-size: 28px;
         background-position: 10% 88%; }
       .results-card--image img {
-        max-width: 100%; }
+        max-width: 100%;
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+        transform: scale(1); }
     .results-card--title {
       cursor: pointer;
       padding: 20px;

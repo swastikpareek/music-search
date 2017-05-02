@@ -1,123 +1,36 @@
 <div class="search-results--region region">
  <div class="search-results--region--content">
-  <div class="no-results"></div>
-  <div class="initial-screen hidden">
+  <div class="no-results initial-screen" ng-if="screenState === 'no-results'">
+    <img src="img/Magnify@2x.png"/>
+    <div class="initial-screen--headline">
+      No results to show try another search.
+    </div>
+  </div>
+  <div class="initial-screen"  ng-if="screenState === 'initial'">
     <img src="img/Magnify@2x.png"/>
     <div class="initial-screen--headline">
       Your results will appear here
     </div>
   </div>
-  <div class="results">
-    <div class="results-card">
-      <div class="results-card--header">
-        <div class="results-card--image artist">
-          <img src="img/placeholder.jpg">
-        </div>
-        <div class="results-card--header__hover">
-          <img src="img/Bitmap@2x.png" />
-          <div>View Tracks</div>
-        </div>
-      </div>
-      <div class="results-card--title">
-        Some Title
-      </div>
+  <div class="loading-screen initial-screen" ng-if="screenState === 'loading'">
+    <img src="img/Magnify@2x.png"/>
+    <div class="initial-screen--headline">
+      Loading
     </div>
-    <div class="results-card">
-      <div class="results-card--header">
-        <div class="results-card--image album">
-          <img src="img/placeholder.jpg">
+  </div>
+  <div class="results" ng-if="screenState === 'results'">
+    <div class="results-card" ng-repeat="result in results track by $index">
+      <div class="results-card--header" style="background-image: url('{{result.images[1].url}}')">
+        <div class="results-card--image" ng-class="result.type">
+
         </div>
         <div class="results-card--header__hover">
           <img src="img/Bitmap@2x.png" />
-          <div>View Tracks</div>
+          <div>View {{getLabel(result.type)}}</div>
         </div>
       </div>
       <div class="results-card--title">
-        Some Title
-      </div>
-    </div>
-    <div class="results-card">
-      <div class="results-card--header">
-        <div class="results-card--image artist">
-          <img src="img/placeholder.jpg">
-        </div>
-        <div class="results-card--header__hover">
-          <img src="img/Bitmap@2x.png" />
-          <div>View Tracks</div>
-        </div>
-      </div>
-      <div class="results-card--title">
-        Some Title
-      </div>
-    </div>
-    <div class="results-card">
-      <div class="results-card--header">
-        <div class="results-card--image album">
-          <img src="img/placeholder.jpg">
-        </div>
-        <div class="results-card--header__hover">
-          <img src="img/Bitmap@2x.png" />
-          <div>View Tracks</div>
-        </div>
-      </div>
-      <div class="results-card--title">
-        Some Title
-      </div>
-    </div>
-    <div class="results-card">
-      <div class="results-card--header">
-        <div class="results-card--image artist">
-          <img src="img/placeholder.jpg">
-        </div>
-        <div class="results-card--header__hover">
-          <img src="img/Bitmap@2x.png" />
-          <div>View Tracks</div>
-        </div>
-      </div>
-      <div class="results-card--title">
-        Some Title
-      </div>
-    </div>
-    <div class="results-card">
-      <div class="results-card--header">
-        <div class="results-card--image album">
-          <img src="img/placeholder.jpg">
-        </div>
-        <div class="results-card--header__hover">
-          <img src="img/Bitmap@2x.png" />
-          <div>View Tracks</div>
-        </div>
-      </div>
-      <div class="results-card--title">
-        Some Title
-      </div>
-    </div>
-    <div class="results-card">
-      <div class="results-card--header">
-        <div class="results-card--image artist">
-          <img src="img/placeholder.jpg">
-        </div>
-        <div class="results-card--header__hover">
-          <img src="img/Bitmap@2x.png" />
-          <div>View Tracks</div>
-        </div>
-      </div>
-      <div class="results-card--title">
-        Some Title
-      </div>
-    </div>
-    <div class="results-card">
-      <div class="results-card--header">
-        <div class="results-card--image album">
-          <img src="img/placeholder.jpg">
-        </div>
-        <div class="results-card--header__hover">
-          <img src="img/Bitmap@2x.png" />
-          <div>View Tracks</div>
-        </div>
-      </div>
-      <div class="results-card--title">
-        Some Title
+        {{result.name}}
       </div>
     </div>
   </div>

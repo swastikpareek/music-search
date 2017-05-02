@@ -26,6 +26,12 @@
   @include transition(0.3s all cubic-bezier(0,0,0,0.4));
 }
 
+%textEllipsis{
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 %flex-container{
   @include flexbox;
