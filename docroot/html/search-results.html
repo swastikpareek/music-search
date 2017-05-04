@@ -20,8 +20,8 @@
   </div>
   <div class="results" ng-if="screenState === 'results'">
     <div class="results-card" ng-repeat="result in results track by $index">
-      <div class="results-card--header" style="background-image: url('{{result.images[1].url}}')">
-        <div class="results-card--image" ng-class="result.type">
+      <div class="results-card--header">
+        <div class="results-card--image" ng-class="result.type" style="background-image: url('{{result.images[1].url}}')">
 
         </div>
         <div class="results-card--header__hover">
@@ -33,6 +33,9 @@
         {{result.name}}
       </div>
     </div>
+  </div>
+  <div class="load-more-wrapper">
+    <div class="load-more" ng-if="search.canLoadMore" ng-click="loadMoreResults()">SHOW ME MORE!</div>
   </div>
  </div>
 </div>

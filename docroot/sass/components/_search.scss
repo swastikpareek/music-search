@@ -55,12 +55,19 @@
           padding: 10px 20px;
           @include rounded(20px);
           background: $pink-pallete;
+          cursor: pointer;
           @media #{$ipp}{
             min-height: 30px;
             font-size: 12px;
             padding: 10px 25px;
             @include rounded(20px);
           }
+          @include transform(scale(1));
+          @extend %animationFast;            
+          &:hover{
+            @include transform(scale(1.02));
+            @include box-shadow(1px 1px 3px $black);             
+          }          
         }
       }
     }

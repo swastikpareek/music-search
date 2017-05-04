@@ -59,6 +59,9 @@
 body {
   font-family: "Raleway Regular", Arial, sans-serif; }
 
+.search-bar--region--field--button, .load-more {
+  transition: 0.1s all cubic-bezier(0, 0, 0, 0.4); }
+
 body.initially-hidden {
   transition: 0.2s all cubic-bezier(0, 0, 0, 0.4); }
 
@@ -108,7 +111,8 @@ body {
   background: #c34473;
   color: #fff;
   padding: 20px 0;
-  height: 100vh; }
+  height: 100vh;
+  overflow: hidden; }
   @media screen and (min-width: 768px) {
     .header {
       padding: 40px 0; } }
@@ -247,13 +251,18 @@ body {
       line-height: 20px;
       padding: 10px 20px;
       border-radius: 20px;
-      background: #c34473; }
+      background: #c34473;
+      cursor: pointer;
+      transform: scale(1); }
       @media screen and (min-width: 768px) {
         .search-bar--region--field--button {
           min-height: 30px;
           font-size: 12px;
           padding: 10px 25px;
           border-radius: 20px; } }
+      .search-bar--region--field--button:hover {
+        transform: scale(1.02);
+        box-shadow: 1px 1px 3px #000; }
 
 .search-results {
   background: #383a49; }
@@ -293,22 +302,20 @@ body {
     margin: 10px 0; }
     .results-card:hover .results-card--header__hover {
       opacity: 1; }
-    .results-card:hover .results-card--image img {
+    .results-card:hover .results-card--image {
       -moz-filter: blur(5px);
       -o-filter: blur(5px);
       -ms-filter: blur(5px);
       filter: blur(5px);
       transform: scale(1.05); }
-    .results-card:hover .results-card--image:before {
-      opacity: 0; }
+      .results-card:hover .results-card--image:before {
+        opacity: 0; }
     .results-card--header {
       position: relative;
       padding-top: 100%;
       overflow: hidden;
       cursor: pointer;
-      background-color: #c34473;
-      background-repeat: no-repeat;
-      background-size: contain; }
+      background-color: #c34473; }
       .results-card--header__hover {
         position: absolute;
         top: 0;
@@ -339,7 +346,14 @@ body {
       bottom: 0;
       right: 0;
       line-height: 0;
-      overflow: hidden; }
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: contain;
+      -moz-filter: blur(0px);
+      -o-filter: blur(0px);
+      -ms-filter: blur(0px);
+      filter: blur(0px);
+      transform: scale(1); }
       .results-card--image:before {
         content: '';
         position: absolute;
@@ -360,18 +374,29 @@ body {
         background-image: url(../img/artist-icon@2x.png);
         background-size: 28px;
         background-position: 10% 88%; }
-      .results-card--image img {
-        max-width: 100%;
-        -moz-filter: blur(0px);
-        -o-filter: blur(0px);
-        -ms-filter: blur(0px);
-        filter: blur(0px);
-        transform: scale(1); }
     .results-card--title {
       cursor: pointer;
       padding: 20px;
       color: #000;
       line-height: 18px;
       font-size: 16px; }
+
+.load-more {
+  display: inline-block;
+  background: #c34473;
+  color: white;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transform: scale(1);
+  box-shadow: 0px 0px 3px #000;
+  border-radius: 40px; }
+  .load-more:hover {
+    transform: scale(1.04);
+    box-shadow: 2px 2px 5px #000; }
+  .load-more-wrapper {
+    padding: 20px 0;
+    text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */

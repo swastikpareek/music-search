@@ -1,11 +1,11 @@
-
 (function() {
   'use strict';
 
   // Declare app level module which depends on views, and components
   angular.module('musicSearch', [
-      'musicSearch.constants',
-      'musicSearch.services.search',
-      'musicSearch.main',
-    ]);
+    'musicSearch.constants',
+    'musicSearch.services.helper',
+    'musicSearch.services.search',
+    'musicSearch.main',
+  ]);
 }());
