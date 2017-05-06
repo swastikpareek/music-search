@@ -1,3 +1,18 @@
+/**
+ * This SASS Implementation follows Component Based approach
+ *
+ * Main SASS file where all partials are imported in order of realtion to each
+ * other.
+ *
+ * Initailly all base partial files are loaded which are dependencies for other
+ * components. Then the related components partials are loaded.
+ */
+/**
+ * Partials containing color variables used sitewide
+ */
+/**
+ * Partial containing all font variables and font face inclusions
+ */
 @font-face {
   font-family: "Raleway Bold";
   src: url(../fonts/Raleway-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/Raleway-Bold.woff) format("woff"), url(../fonts/Raleway-Bold.ttf) format("truetype"), url(../fonts/Raleway-Bold.svg) format("svg");
@@ -22,16 +37,18 @@
   font-weight: normal;
   font-style: normal; }
 
+/**
+ * Partial containing media query variables used
+ * Two brekapoints used for responsiveness
+ */
+/**
+ * Partials containing mixins used generally
+ */
+/**
+ * Animation Placeholder used for standard animations
+ */
 .header--region--arrow img {
   animation: bounce 1.2s cubic-bezier(0, 0, 0, 0.4) infinite; }
-
-@keyframes bounce {
-  0% {
-    transform: scale(1) translateY(-15px); }
-  20% {
-    transform: scale(1.3) translateY(15px); }
-  100% {
-    transform: scale(1) translateY(-15px); } }
 
 .header--region--banner--content {
   transform-style: preserve-3d;
@@ -43,6 +60,14 @@
   animation: rotation 0.2s cubic-bezier(0, 0, 0, 0.4);
   animation-iteration-count: 2;
   animation-delay: 0.5s; }
+
+@keyframes bounce {
+  0% {
+    transform: scale(1) translateY(-15px); }
+  20% {
+    transform: scale(1.3) translateY(15px); }
+  100% {
+    transform: scale(1) translateY(-15px); } }
 
 @keyframes rotation {
   0% {
@@ -56,6 +81,9 @@
   100% {
     transform: rotateZ(0deg); } }
 
+/**
+ * Pratials containing placeholder definitions used sitewide
+ */
 body {
   font-family: "Raleway Regular", Arial, sans-serif; }
 
@@ -85,6 +113,9 @@ body.initially-hidden {
   flex-wrap: wrap;
   width: 100%; }
 
+/**
+ * Partial for General site layout
+ */
 * {
   box-sizing: border-box; }
 
@@ -107,6 +138,9 @@ body {
 .hidden {
   display: none !important; }
 
+/**
+ * Partial for header related SASS
+ */
 .header {
   background: #c34473;
   color: #fff;
@@ -174,6 +208,9 @@ body {
         width: 43px;
         height: auto; }
 
+/**
+ * Partial for footer related SASS
+ */
 .footer {
   color: #fff;
   background: #333441;
@@ -186,6 +223,9 @@ body {
       font-size: 18px;
       padding: 30px 0; } }
 
+/**
+ * Partial for Search bars and region specific.
+ */
 .search-bar {
   background: #333441;
   color: #fff;
@@ -330,6 +370,9 @@ body {
       .search-results .initial-screen--headline.pink {
         color: #c34473; }
 
+/**
+ * Partial for results grids and tiles
+ */
 .results {
   padding: 20px 0;
   overflow: hidden; }
@@ -362,7 +405,7 @@ body {
         -ms-flex-preferred-size: calc(25% - 15px);
         flex-basis: calc(25% - 15px);
         width: calc(25% - 15px); } }
-    .results-card.loaded {
+    .results-card.animated {
       opacity: 1;
       transform: scale(1); }
     @media screen and (min-width: 768px) {
@@ -489,6 +532,9 @@ body {
     padding: 20px 0;
     text-align: center; }
 
+/**
+ * Partial for loader animations and  related SASS
+ */
 .loader {
   display: block;
   margin: 30px auto;

@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html ng-app="musicSearch">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
-  <title>Music Search</title>
-  <!-- Restting and normalising css for browser consistency-->
-  <link rel="stylesheet" type="text/css" href="bower_components/reset-css/reset.css">
-  <link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css">
-   <!-- Importing local css files -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-</head>
-<body ng-controller="mainCtrl as $mainCtrl" class="initially-hidden" ng-class="{'has-loaded' : controllerReady}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <title>Music Search</title>
+    <!-- Restting and normalising css for browser consistency-->
+    <link rel="stylesheet" type="text/css" href="bower_components/reset-css/reset.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css">
+     <!-- Importing local css files -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
 
-  <div class="application">
-    <div class="header" ng-include="'html/header.html'"></div>
-    <div class="content" ng-include="'html/content.html'"></div>
-    <div class="footer" ng-include="'html/footer.html'"></div>
-  </div>
+  <body ng-controller="mainCtrl as $mainCtrl" class="initially-hidden" ng-class="{'has-loaded' : controllerReady}">
+    <!-- Header Template Inclusion -->
+    <header class="header" ng-include="'html/header.html'"></header>
+    <!-- Content Template Inclusion -->
+    <content class="content" ng-include="'html/content.html'"></content>
+    <!-- Footer Template Inclusion -->
+    <footer class="footer" ng-include="'html/footer.html'"></footer>
 
-  <!-- Adding Script in the last for performance -->
-  <script type="text/javascript" src="js/dependencies.min.js"></script>
-  <!-- Importing configuration for the app -->
-  <script type="text/javascript" src="js/config.js"></script>
+    <!-- Adding Script in the last for performance -->
 
-  <!-- Importing constants needed -->
-  <script type="text/javascript" src="js/assets/constants/constants.js"></script>
+    <!-- Adding Bower dependencies as minified file -->
+    <script type="text/javascript" src="js/dependencies.min.js"></script>
 
-  <!-- Injecting Services -->
-  <script type="text/javascript" src="js/assets/services/helper.js"></script>
-  <script type="text/javascript" src="js/assets/services/search.js"></script>
+    <!-- Importing configuration for the app -->
+    <script type="text/javascript" src="js/config.js"></script>
 
-  <!-- Injecting Directives -->
-  <script type="text/javascript" src="js/assets/directives/content-card.js"></script>
+    <!-- Importing constants needed -->
+    <script type="text/javascript" src="js/assets/constants/constants.js"></script>
 
-  <!-- Importing main controller file -->
-  <script type="text/javascript" src="js/assets/controllers/main.js"></script>
+    <!-- Injecting Services -->
+    <script type="text/javascript" src="js/assets/services/helper.js"></script>
+    <script type="text/javascript" src="js/assets/services/search.js"></script>
 
-</body>
+    <!-- Injecting Directives -->
+    <script type="text/javascript" src="js/assets/directives/content-card.js"></script>
+
+    <!-- Importing main controller file -->
+    <script type="text/javascript" src="js/assets/controllers/main.js"></script>
+
+  </body>
 </html>

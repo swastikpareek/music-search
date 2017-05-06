@@ -4,7 +4,7 @@
   angular.module('musicSearch.services.helper', [])
     .service('Helper', [function() {
       var context = this;
-      // Function for shuffling data
+      // Function for shuffling data alternatively
       context.shuffleArray = function(d1, d2) {
         var loop1 = Math.min(d1.length, d2.length);
         var loop2 = Math.max(d1.length, d2.length) - loop1;
@@ -14,6 +14,7 @@
           shuffledArray.push(d1[i]);
           shuffledArray.push(d2[i]);
         }
+        // Incase if two arrays are of different sizes
         for (i = 0; i < loop2; i++) {
           if (d1.length > d2.length) {
             shuffledArray.push(d1[i + loop1]);

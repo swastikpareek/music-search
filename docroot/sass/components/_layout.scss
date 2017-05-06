@@ -1,6 +1,11 @@
+/**
+ * Partial for General site layout
+ */
+
 *{
   box-sizing: border-box;
 }
+
 body{
   @extend %ralewayRegular;
   font-size: 14px;
@@ -16,9 +21,7 @@ body{
   }
 }
 
-.music-search{
-
-}
+// ---------- Regions specific -----------
 
 .region{
   padding: 0 10px;
@@ -26,6 +29,9 @@ body{
     padding: 0 30px;
   }
 }
+
+
+// ------------- Helper Classes ----------
 
 .hidden{
   display: none !important;

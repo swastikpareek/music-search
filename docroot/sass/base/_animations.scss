@@ -1,8 +1,22 @@
-
+/**
+ * Animation Placeholder used for standard animations
+ */
 
 %bounceAnimation {
   @include prefix(animation, bounce 1.2s cubic-bezier(0,0,0,0.4) infinite);
 }
+
+%animationWrapper{
+  @include prefix(transform-style, preserve-3d);
+  @include prefix(perspective, 800px);
+}
+
+%rotationAnimationOnce{
+  @include prefix(animation, rotation 0.2s cubic-bezier(0,0,0,0.4));
+  @include prefix(animation-iteration-count, 2);
+  @include prefix(animation-delay, 0.5s);
+}
+
 
 @keyframes bounce {
   0% {
@@ -15,18 +29,6 @@
   100% {
     @include transform(scale(1) translateY(-15px));
   }
-}
-
-
-%animationWrapper{
-  @include prefix(transform-style, preserve-3d);
-  @include prefix(perspective, 800px);
-}
-
-%rotationAnimationOnce{
-  @include prefix(animation, rotation 0.2s cubic-bezier(0,0,0,0.4));
-  @include prefix(animation-iteration-count, 2);
-  @include prefix(animation-delay, 0.5s);
 }
 
 @keyframes rotation {

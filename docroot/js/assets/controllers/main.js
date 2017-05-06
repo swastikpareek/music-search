@@ -1,3 +1,7 @@
+/**
+ * Js file containing definition of main controller
+ */
+
 (function() {
 
   'use strict';
@@ -24,7 +28,7 @@
         offset = 0;
         // reset arguments
         $scope.search.canLoadMore = false;
-      $scope.screenState = 'results';
+        $scope.screenState = 'results';
         // reset array
         $scope.results = [];
         initSearch($scope.search.query);

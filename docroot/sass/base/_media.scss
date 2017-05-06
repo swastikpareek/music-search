@@ -1,12 +1,14 @@
-// media Queuries
+/**
+ * Partial containing media query variables used
+ * Two brekapoints used for responsiveness
+ */
 
-$iphone5 : 320px;
-// media Queuries
-
+// Ipad screen Portrait and above
 $ipad : 768px;
 
+// Ipad screen Landscape and above
 $ipadL: 980px;
 
-$ip5: 'screen and (min-width: #{$iphone5})';
+
 $ipp: 'screen and (min-width: #{$ipad})';
 $ipl: 'screen and (min-width: #{$ipadL})';

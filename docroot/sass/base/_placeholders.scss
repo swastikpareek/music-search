@@ -1,3 +1,9 @@
+/**
+ * Pratials containing placeholder definitions used sitewide
+ */
+
+// ---------- Fonts -------------
+
 %ralewayBold{
   font-family: $RBold, Arial , sans-serif;
 }
@@ -14,6 +20,8 @@
   font-family: $RLight, Arial , sans-serif;
 }
 
+// ------------ Animations ----------
+
 %animationFast{
   @include transition(0.1s all cubic-bezier(0,0,0,0.4));
 }
@@ -26,6 +34,8 @@
   @include transition(0.3s all cubic-bezier(0,0,0,0.4));
 }
 
+// ---------- Other Layout specific -----------------
+
 %textEllipsis{
   white-space: nowrap;
   width: 100%;
@@ -37,5 +47,5 @@
   @include flexbox;
   @include justify-content(space-between);
   @include flex-wrap(wrap);
-  width: 100%;  
+  width: 100%;
 }

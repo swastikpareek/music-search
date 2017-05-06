@@ -1,3 +1,8 @@
+/**
+ * Partial for results grids and tiles
+ */
+
+
 .results{
   padding: 20px 0;
   overflow: hidden;
@@ -23,7 +28,7 @@
       @include flex-basis(calc(25% - 15px));
       width: calc(25% - 15px);
     }
-    &.loaded{
+    &.animated{
       opacity: 1;
       @include transform(scale(1));
     }

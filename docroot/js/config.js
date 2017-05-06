@@ -1,4 +1,11 @@
+/**
+ * Basic config files which dependency injects other JS components
+ * like Constants , Services , Directives and Controllers.
+ */
+
+
 (function() {
+
   'use strict';
 
   // Declare app level module which depends on views, and components
@@ -9,4 +16,5 @@
     'musicSearch.directive.contentCard',
     'musicSearch.main',
   ]);
+
 }());

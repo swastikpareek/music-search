@@ -1,13 +1,14 @@
 <div>
-<div class="results-card--header">
-  <div class="results-card--image" ng-class="object.type" style="background-image: url('{{object.images[1].url}}')">
+  <!-- Template for content card directive -->
+  <div class="results-card--header">
+    <div class="results-card--image" ng-class="object.type" style="background-image: url('{{object.images[1].url}}')">
+    </div>
+    <div class="results-card--header__hover">
+      <img src="img/Bitmap@2x.png" />
+      <div>View {{getLabel(object.type)}}</div>
+    </div>
   </div>
-  <div class="results-card--header__hover">
-    <img src="img/Bitmap@2x.png" />
-    <div>View {{getLabel(object.type)}}</div>
+  <div class="results-card--title">
+    <div>{{object.name}}</div>
   </div>
-</div>
-<div class="results-card--title">
-  <div>{{object.name}}</div>
-</div>
 </div>

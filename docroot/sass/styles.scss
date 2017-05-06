@@ -1,3 +1,14 @@
+/**
+ * This SASS Implementation follows Component Based approach
+ *
+ * Main SASS file where all partials are imported in order of realtion to each
+ * other.
+ *
+ * Initailly all base partial files are loaded which are dependencies for other
+ * components. Then the related components partials are loaded.
+ */
+
+//--------- Base Files import ----------
 @import 'base/variables';
 @import 'base/fonts';
 @import 'base/media';
@@ -5,6 +16,8 @@
 @import 'base/animations';
 @import 'base/placeholders';
 
+
+//-------- Components Files import ------
 @import 'components/layout';
 @import 'components/header';
 @import 'components/footer';
