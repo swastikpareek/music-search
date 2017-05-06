@@ -5,5 +5,8 @@ $iphone5 : 320px;
 
 $ipad : 768px;
 
+$ipadL: 980px;
+
 $ip5: 'screen and (min-width: #{$iphone5})';
 $ipp: 'screen and (min-width: #{$ipad})';
+$ipl: 'screen and (min-width: #{$ipadL})';

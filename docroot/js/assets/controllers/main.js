@@ -9,6 +9,7 @@
       $scope.search = {
         'query': '',
         'canLoadMore': false,
+        'loading': false
       };
       $scope.screenState = 'initial';
 
@@ -17,20 +18,13 @@
       var limit = 20;
       var offset = 0;
 
-      // Simple function for getting label
-      $scope.getLabel = function(type) {
-        if (type === 'album') {
-          return 'Albums';
-        } else if (type === 'artist') {
-          return 'Tracks';
-        }
-      };
-
-
       // Scope member for getting results on click of search
       $scope.getSearchResults = function() {
         // reset offset
         offset = 0;
+        // reset arguments
+        $scope.search.canLoadMore = false;
+      $scope.screenState = 'results';
         // reset array
         $scope.results = [];
         initSearch($scope.search.query);
@@ -53,14 +47,16 @@
           $scope.search.canLoadMore = false;
           $scope.screenState = 'initial';
         } else {
-          $scope.screenState = 'loading';
+          $scope.search.loading = true;
           Search.fetchResults(query, limit, offset).then(function(data) {
+              $scope.search.loading = false;
               $scope.screenState = 'results';
               generateResults(data);
             })
             .catch(function(err) {
               $scope.screenState = 'error';
               console.log(err);
+              $scope.search.loading = false;
             });
         }
       };
@@ -108,14 +104,16 @@
         // data from the single array so we will update the limit var to more data and update the new
         // offset to offset + more Data
         var query = $scope.search.query;
-
+        $scope.search.loading = true;
         Search.fetchResults(query, moreData * 2 /* as it gets halfed */ , offset).then(function(data) {
             var res = Helper.shuffleArray(data.albums.items, data.artists.items);
             $scope.results = $scope.results.concat(res);
             offset += moreData;
+            $scope.search.loading = false;
           })
           .catch(function(err) {
             $scope.screenState = 'error';
+            $scope.search.loading = false;
             console.log(err);
           });
 

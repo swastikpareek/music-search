@@ -6,6 +6,7 @@
     'musicSearch.constants',
     'musicSearch.services.helper',
     'musicSearch.services.search',
+    'musicSearch.directive.contentCard',
     'musicSearch.main',
   ]);
 }());

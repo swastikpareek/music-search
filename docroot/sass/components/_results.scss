@@ -3,29 +3,57 @@
   overflow: hidden;
   @extend %flex-container;
   &-card{
-    @include flex-basis(calc(25% - 15px));
-    width: calc(25% - 30px);
+    @include flex-basis(100%);
+    @include flexbox;
+    @include flex-direction(row);
+    width: 100%;
     float: left;
     background: $white;
-    margin: 10px 0;
-    &:hover{
-      .results-card--header__hover{
-        opacity: 1;
-      }
-      .results-card--image{
-        @include filter(blur(5px));
-        @include transform(scale(1.05));
-        &:before{
-          opacity: 0;
+    margin: 5px 0;
+    opacity: 0;
+    @include transform(scale(0.3));
+    @extend %animationSlow;
+    @media #{$ipp}{
+      @include flex-basis(calc(50% - 10px));
+      width: calc(50% - 10px);
+      @include flex-direction(column);
+      margin: 10px 0;
+    }
+    @media #{$ipl}{
+      @include flex-basis(calc(25% - 15px));
+      width: calc(25% - 15px);
+    }
+    &.loaded{
+      opacity: 1;
+      @include transform(scale(1));
+    }
+    @media #{$ipp}{
+      &:hover{
+        .results-card--header__hover{
+          opacity: 1;
+        }
+        .results-card--image{
+          @include filter(blur(5px));
+          @include transform(scale(1.05));
+          &:before{
+            opacity: 0;
+          }
         }
       }
     }
     &--header{
       position: relative;
-      padding-top: 100%;
       overflow: hidden;
       cursor: pointer;
       background-color: $pink-pallete;
+      padding-top: 0;
+      height: 72px;
+      padding-left: 72px;
+      @media #{$ipp}{
+        width: 100%;
+        padding-left: 0;
+        padding-top: 100%;
+      }
       &__hover{
         position: absolute;
         top: 0;
@@ -54,9 +82,9 @@
       line-height: 0;
       overflow: hidden;
       background-repeat: no-repeat;
-      background-size: contain;   
+      background-size: contain;
       @include filter(blur(0px));
-      @include transform(scale(1));         
+      @include transform(scale(1));
       &:before{
         content: '';
         position: absolute;
@@ -69,7 +97,10 @@
         background-color: rgba(0,0,0,0.3);
         background-repeat: no-repeat;
         background-position: 8% 92%;
-        background-size: 40px;
+        background-size: 28px;
+        @media #{$ipp}{
+          background-size: 40px;
+        }
         @extend %animationSlow;
         cursor: pointer;
       }
@@ -81,8 +112,12 @@
       &.artist{
         &:before{
           background-image: url(../img/artist-icon@2x.png);
-          background-size: 28px;
-          background-position: 10% 88%;
+          background-size: 18px;
+          background-position: 15% 85%;
+          @media #{$ipp}{
+            background-size: 28px;
+            background-position: 10% 88%;
+          }
         }
       }
     }
@@ -92,7 +127,15 @@
       color: $black;
       line-height: 18px;
       font-size: 16px;
-      @extend %textEllipsis;      
+      @include flexbox;
+      @include align-items(center);
+      width: calc(100% - 72px);
+      @media #{$ipp}{
+        font-size: 16px;
+      }
+      div{
+        @extend %textEllipsis;
+      }
     }
   }
 }
@@ -111,7 +154,7 @@
   &:hover{
     @include transform(scale(1.04));
     @include box-shadow(2px 2px 5px $black);
-    
+
   }
   &-wrapper{
     padding: 20px 0;
