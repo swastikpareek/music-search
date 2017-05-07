@@ -1,3 +1,7 @@
+/**
+ * Js file containing definition for content-card directive
+ */
+
 (function() {
   'use strict';
 
