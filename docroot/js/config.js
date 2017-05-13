@@ -14,7 +14,9 @@
     'musicSearch.services.helper',
     'musicSearch.services.search',
     'musicSearch.directive.contentCard',
-    'musicSearch.main',
+    'musicSearch.directive.modalBox',
+    'musicSearch.controller.main',
+    'musicSearch.controller.result',
   ]);
 
 }());

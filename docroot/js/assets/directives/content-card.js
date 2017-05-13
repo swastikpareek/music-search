@@ -25,10 +25,18 @@
           // Simple function for getting label
           $scope.getLabel = function(type) {
             if (type === 'album') {
-              return 'Albums';
-            } else if (type === 'artist') {
               return 'Tracks';
+            } else if (type === 'artist') {
+              return 'Albums';
             }
+          };
+          // Open modal function to emit open-modal event;
+          $scope.openModal = function(modalId, obj) {
+            var element = document.getElementById(modalId);
+            var event = new CustomEvent('open-modal', {
+              'detail': obj
+            });
+            element.dispatchEvent(event);
           };
         }
       };

@@ -8,6 +8,8 @@
   angular.module('musicSearch.constants', [])
     .constant("Constants", {
       "APIURL": "https://api.spotify.com/",
-      "Search": "v1/search"
+      "Search": "v1/search",
+      "AlbumById": "v1/albums/",
+      "ArtistById": "v1/artists/"
     });
 }());

@@ -1,6 +1,6 @@
 <!-- Template for search Results Section -->
 
-<div class="search-results--region region">
+<div class="search-results--region region" ng-controller="resultCtrl">
  <div class="search-results--region--content">
   <div class="no-results" ng-if="screenState === 'no-results'">
     <div class="no-results--headline">
@@ -28,3 +28,6 @@
   </div>
  </div>
 </div>
+
+
+<modal-box id="modal"></modal-box>

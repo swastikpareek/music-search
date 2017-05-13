@@ -49,3 +49,37 @@
   @include flex-wrap(wrap);
   width: 100%;
 }
+
+%close-btn {
+  cursor: pointer;
+  width: 41px;
+  height: 41px;
+  padding: 10px;
+  opacity: 1;
+  @extend %animation;
+  @include rounded(100%);
+  position: relative;
+  color: transparent;
+  &:hover {
+    opacity: 1;
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    left: 45%;
+    top: 10px;
+    content: ' ';
+    height: 24px;
+    width: 1px;
+    background-color: $black-close;
+    @media #{$ipp}{
+      background-color: $white;
+    }
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}

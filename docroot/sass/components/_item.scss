@@ -1,0 +1,161 @@
+.item{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  @include flexbox;
+  @include flex-direction(column);
+  &--header{
+    position: relative;
+    padding: 0 0 20px 0;
+    margin:  15px 15px 0px 15px;
+    overflow: hidden;
+    border-bottom: 1px solid $light-grey-pallete;
+    @media #{$ipp}{
+      padding: 0;
+      border-bottom: 0;
+      overflow: visible;
+      margin: 0;
+      width: 100%;
+    }
+    &--image{
+      position:relative;
+      height: 100px;
+      width: 100px;
+      margin-right: 15px;
+      background-size: cover;
+      background-position: center center;
+      float: left;
+      @media #{$ipp}{
+        width: 100%;
+        height: auto;
+        float: none;
+        margin-right: 0;
+        padding-top: 240px;
+      }
+      &:before{
+        content: '';
+        position:absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(33,33,33,0.35);
+      }
+    }
+    &--title{
+      color: $black;
+      z-index: 10;
+      font-size: 18px;
+      line-height: 1.4;
+      @extend %ralewayMedium;
+      display: table;
+      padding-top: 5px;
+      @media #{$ipp}{
+        color: white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 28px;
+        padding: 20px;
+        @include prefix(text-shadow, 1px 1px 2px $black);
+      }
+      .title{
+        @extend %ralewayLight;
+        color: $dark-grey-pallete;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  &--content{
+    overflow: hidden;
+    height: 100%;
+    @include flex(1);
+    @include flexbox;
+    @include flex-direction(column);
+    &--heading{
+      display: none;
+      font-size: 16px;
+      color: black;
+      @extend %ralewayMedium;
+      padding: 20px 0;
+      margin: 0 10px;
+      border-bottom: 1px solid $light-grey-pallete;
+      @media #{$ipp}{
+        display: block;
+        font-size: 18px;
+        padding: 25px 0;
+        margin: 0 20px;
+      }
+    }
+    &--list{
+      padding: 5px 15px;
+      height: 100%;
+      @include flex(1);
+      overflow: auto;
+      @media #{$ipp}{
+        padding: 10px 20px;
+      }
+      &.loading{
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+        .loader{
+          width: 24px;
+          height: 24px;
+          border-width: 2px;
+          .loader-inner{
+            background-color: $pink-pallete;
+          }
+        }
+      }
+      &--item{
+        padding: 10px 0;
+        @include flexbox;
+        &--left{
+          position: relative;
+          display: none;
+          overflow: hidden;
+          @media #{$ipp}{
+            display: block;
+            width: 96px;
+            height: 96px;
+            background-size: cover;
+          }
+          &:before{
+            content: '';
+            position:absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(33,33,33,0.35);
+          }
+        }
+        &--right{
+          padding: 10px 0;
+          @media #{$ipp}{
+            padding: 15px 0 15px 20px;
+          }
+        }
+        &--title{
+          font-size: 18px;
+          @extend %ralewayMedium;
+          margin-bottom: 10px;
+          @media #{$ipp}{
+            font-size: 24px;
+            margin-bottom: 15px;
+          }
+        }
+        &--info{
+          @extend %ralewayLight;
+          font-size: 14px;
+          color: $dark-grey-pallete;
+          @media #{$ipp}{
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

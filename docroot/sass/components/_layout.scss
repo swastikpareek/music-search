@@ -9,6 +9,7 @@
 body{
   @extend %ralewayRegular;
   font-size: 14px;
+  color: $black;
   @media #{$ipp}{
     font-size: 16px;
   }
@@ -30,9 +31,10 @@ body{
   }
 }
 
+// ----------- Helper Classes -----------
 
-// ------------- Helper Classes ----------
-
-.hidden{
-  display: none !important;
+.mobile-visible{
+  @media #{$ipp}{
+    display: none;
+  }
 }

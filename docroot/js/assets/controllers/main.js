@@ -6,8 +6,8 @@
 
   'use strict';
 
-  angular.module('musicSearch.main', [])
-    .controller('mainCtrl', ['$scope', '$location', 'Helper', 'Search', function($scope, $location, Helper, Search) {
+  angular.module('musicSearch.controller.main', [])
+    .controller('mainCtrl', ['$scope', 'Helper', 'Search', function($scope, Helper, Search) {
       $scope.controllerReady = true;
 
       $scope.search = {
