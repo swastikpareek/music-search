@@ -29,7 +29,7 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "http-server -p 4040 -c-1 ./docroot && gulp watch",
+    "start": "http-server -p 4040 -c-1 ./docs && gulp watch",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js --single-run"
