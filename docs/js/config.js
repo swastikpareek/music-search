@@ -11,12 +11,13 @@
   // Declare app level module which depends on views, and components
   angular.module('musicSearch', [
     'musicSearch.constants',
+    'musicSearch.services.localStorage',
     'musicSearch.services.helper',
     'musicSearch.services.search',
     'musicSearch.directive.contentCard',
     'musicSearch.directive.modalBox',
     'musicSearch.controller.main',
-    'musicSearch.controller.result',
+    'musicSearch.controller.search',
   ]);
 
 }());

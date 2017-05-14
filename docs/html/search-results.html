@@ -1,6 +1,6 @@
 <!-- Template for search Results Section -->
 
-<div class="search-results--region region" ng-controller="resultCtrl">
+<div class="search-results--region region" >
  <div class="search-results--region--content">
   <div class="no-results" ng-if="screenState === 'no-results'">
     <div class="no-results--headline">
@@ -20,11 +20,11 @@
       </div>
     </div>
   <div class="results" ng-if="screenState === 'results'">
-    <content-card class="results-card" ng-repeat="result in results track by $index" object="result"> </content-card>
+    <content-card class="results-card" ng-repeat="result in results track by $index" tabindex="0" object="result"> </content-card>
   </div>
   <div ng-include="'html/loader-gif.html'" class="loader-wrapper" ng-if="search.loading"></div>
   <div class="load-more-wrapper" ng-if="search.canLoadMore && !search.loading" >
-    <div class="load-more" ng-click="loadMoreResults()">SHOW ME MORE!</div>
+    <div class="load-more" ng-click="loadMoreResults()" tabindex="0">SHOW ME MORE!</div>
   </div>
  </div>
 </div>

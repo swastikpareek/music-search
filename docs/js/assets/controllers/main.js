@@ -7,7 +7,7 @@
   'use strict';
 
   angular.module('musicSearch.controller.main', [])
-    .controller('mainCtrl', ['$scope', 'Helper', 'Search', function($scope, Helper, Search) {
+    .controller('mainCtrl', ['$scope', '$rootScope', 'Helper', 'Search', function($scope, $rootScope, Helper, Search) {
       $scope.controllerReady = true;
 
       $scope.search = {
@@ -34,7 +34,6 @@
         initSearch($scope.search.query);
       };
 
-
       // Scope Member for loading more results
       $scope.loadMoreResults = function() {
         initSearch($scope.search.query);
@@ -56,6 +55,8 @@
               $scope.search.loading = false;
               $scope.screenState = 'results';
               generateResults(data);
+              // broadcasting load event
+              $rootScope.$broadcast('load-complete');
             })
             .catch(function(err) {
               $scope.screenState = 'error';

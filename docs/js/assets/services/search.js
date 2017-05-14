@@ -8,7 +8,7 @@
   'use strict';
 
   angular.module('musicSearch.services.search', [])
-    .service('Search', ['$http', '$location', '$q', 'Constants', function($http, $location, $q, Constants) {
+    .service('Search', ['$http', '$location', '$q', 'Constants', 'LocalStorage', function($http, $location, $q, Constants, LocalStorage) {
       var context = this;
       // Function for fetching all results with given Query
       context.fetchResults = function(str, limit, offset) {
@@ -22,6 +22,7 @@
           .success(function(data, status, headers, config) {
             // 200 Ok state
             deferred.resolve(data);
+            LocalStorage.updateLocalStorage(str);
           })
           .error(function(data, status, header, config) {
             // 5** ** state

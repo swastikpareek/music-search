@@ -48,78 +48,79 @@
           };
 
         },
-        controller: function($scope) {
-          $scope.loadingItem = false;
-          $scope.contents = {};
-          // Business logic for Open Modal
-          $scope.openModalLogic = function($evt, loadmore, URL) {
-            $scope.loadingItem = true;
-            // Stopping flow of background body
-            document.body.style.overflow = 'hidden';
-            // Passing on event data to the modal view
-            $scope.contents = $evt.detail;
-            $scope.contents.items = [];
-            if ($evt.detail.type === 'artist') {
-              getAlbums($evt);
-            } else if ($evt.detail.type === 'album') {
-              getTracks($evt);
-            }
-          };
-          $scope.getTrackTime = function(ms) {
-            var s = Math.ceil(ms / 1000);
-            var sec = s % 60;
-            sec = sec < 10 ? '0' + sec : sec;
-            var min = Math.floor(s / 60);
-            return min + ':' + sec;
-          };
-          // Business logic for Close Modal
-          $scope.closeModalLogic = function($evt) {
-            // Starting flow of outside body
-            document.body.style.overflow = 'visible';
-          };
-          var getAlbums = function($evt, loadmore, URL) {
-            Search.Albums($evt.detail.id, loadmore, URL).then(function(data) {
-                $scope.contents.items = $scope.contents.items.concat(data.items);
-                // if more content to load do another request with new URL
-                if (data.next !== null) {
-                  getAlbums($evt, true, data.next);
-                } else {
-                  //All Data Loaded;
-                  $scope.loadingItem = false;
-                  angular.forEach($scope.contents.items, function(value, key) {
-                    // Get release date of all artists asynchronously.
-                    Search.Album(value.href).then(function(data) {
-                        $scope.contents.items[key].release_day = data.release_date.split('-')[0];
-                      })
-                      .catch(function(err) {
-                        console.log(err);
-                      });
-                  });
-                }
-              })
-              .catch(function(err) {
-                console.log(err);
-                $scope.loadingItem = false;
-              });
-          };
-          var getTracks = function($evt, loadmore, URL) {
-            Search.Tracks($evt.detail.id, loadmore, URL).then(function(data) {
-                $scope.contents.items = $scope.contents.items.concat(data.items);
-                // if more content to load do another request with new URL
-                if (data.next !== null) {
-                  getTracks($evt, true, data.next);
-                } else {
-                  //All Data Loaded;
-                  $scope.loadingItem = false;
-                }
-
-              })
-              .catch(function(err) {
-                console.log(err);
-                $scope.loadingItem = false;
-              });
-          };
+        controller: 'modalCtrl',
+      };
+    }])
+    .controller('modalCtrl', ['$scope', 'Search', function($scope, Search) {
+      $scope.loadingItem = false;
+      $scope.contents = {};
+      // Business logic for Open Modal
+      $scope.openModalLogic = function($evt, loadmore, URL) {
+        $scope.loadingItem = true;
+        // Stopping flow of background body
+        document.body.style.overflow = 'hidden';
+        // Passing on event data to the modal view
+        $scope.contents = $evt.detail;
+        $scope.contents.items = [];
+        if ($evt.detail.type === 'artist') {
+          getAlbums($evt);
+        } else if ($evt.detail.type === 'album') {
+          getTracks($evt);
         }
+      };
+      $scope.getTrackTime = function(ms) {
+        var s = Math.ceil(ms / 1000);
+        var sec = s % 60;
+        sec = sec < 10 ? '0' + sec : sec;
+        var min = Math.floor(s / 60);
+        return min + ':' + sec;
+      };
+      // Business logic for Close Modal
+      $scope.closeModalLogic = function($evt) {
+        // Starting flow of outside body
+        document.body.style.overflow = 'visible';
+      };
+      var getAlbums = function($evt, loadmore, URL) {
+        Search.Albums($evt.detail.id, loadmore, URL).then(function(data) {
+            $scope.contents.items = $scope.contents.items.concat(data.items);
+            // if more content to load do another request with new URL
+            if (data.next !== null) {
+              getAlbums($evt, true, data.next);
+            } else {
+              //All Data Loaded;
+              $scope.loadingItem = false;
+              angular.forEach($scope.contents.items, function(value, key) {
+                // Get release date of all artists asynchronously.
+                Search.Album(value.href).then(function(data) {
+                    $scope.contents.items[key].release_day = data.release_date.split('-')[0];
+                  })
+                  .catch(function(err) {
+                    console.log(err);
+                  });
+              });
+            }
+          })
+          .catch(function(err) {
+            console.log(err);
+            $scope.loadingItem = false;
+          });
+      };
+      var getTracks = function($evt, loadmore, URL) {
+        Search.Tracks($evt.detail.id, loadmore, URL).then(function(data) {
+            $scope.contents.items = $scope.contents.items.concat(data.items);
+            // if more content to load do another request with new URL
+            if (data.next !== null) {
+              getTracks($evt, true, data.next);
+            } else {
+              //All Data Loaded;
+              $scope.loadingItem = false;
+            }
+
+          })
+          .catch(function(err) {
+            console.log(err);
+            $scope.loadingItem = false;
+          });
       };
     }]);
 

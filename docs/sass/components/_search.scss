@@ -12,6 +12,7 @@
     }
     &--region{
       &--field{
+        position: relative;
         max-width: 500px;
         margin: 0 auto;
         @include flexbox;
@@ -68,7 +69,9 @@
           }
           @include transform(scale(1));
           @extend %animationFast;
+          &:focus,
           &:hover{
+            outline: none;
             @include transform(scale(1.02));
             @include box-shadow(1px 1px 3px $black);
           }
@@ -137,4 +140,72 @@
       }
     }
   }
+}
+
+
+.recent-list{
+    background: white;
+    color: black;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    margin-top: 10px;
+    padding: 0 10px 10px 10px;
+    font-size: 12px;
+    @include rounded(5px);
+    opacity: 0;
+    pointer-events: none;
+    @extend %animation;
+    &.visible{
+      @media #{$ipp}{
+        opacity: 1;
+        pointer-events: all;          
+      }
+    }
+    &-no-result{
+      color: $grey-pallete;
+      text-align: center;
+      @extend %ralewayMedium;
+      padding: 10px 0;
+      font-size: 12px;
+    }
+    &-header{
+      color: $grey-pallete;
+      padding: 10px 10px 10px 10px;
+      @extend %ralewayBold;
+    }
+    &-delete{
+      background: $pink-pallete;
+      color: $white;
+      padding: 7px 10px;
+      @include rounded(5px);
+      line-height: 12px;
+      font-size: 10px;
+      position: absolute;
+      top : 3px;
+      right: 3px;
+      cursor: pointer;
+      @extend %animationFast;
+      &:focus,
+      &:hover{
+        outline: none;
+        @include box-shadow(1px 1px 1px $black);
+      }
+    }
+    &-item{
+      cursor: pointer;
+      padding: 10px;
+      border-bottom: 1px solid $light-grey-pallete;
+      @extend %animationFast;
+      &:last-child{
+        border: 0;
+      }
+      &:focus,
+      &:hover{
+        background: $light-grey-pallete;
+        outline: none;
+      }
+    }
 }
