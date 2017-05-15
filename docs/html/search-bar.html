@@ -2,17 +2,17 @@
 
 <div class="search-bar--region region">
   <div class="search-bar--region--field">
-    <input class="search-bar--region--field--input" type="text" placeholder="Search for artist or album title!" ng-model="search.query" ng-keypress="getSearchResultsOnEnter($event)" ng-focus="showRecentSearchModal()" ng-blur="hideRecentSearchModalifEmpty()"></input>
-    <div class="search-bar--region--field--button" tabindex="0" ng-click="getSearchResults()">SEARCH</div>
+    <input class="search-bar--region--field--input" type="text" placeholder="Search for artist or album title!" ng-model="search.query" ng-keypress="getSearchResultsOnEnter($event)" ng-focus="showRecentSearchModal()" ng-blur="hideRecentSearchModal()"></input>
+    <div class="search-bar--region--field--button" ng-click="getSearchResults()">SEARCH</div>
     <div class="recent-list" ng-init="setRecentSearches()" ng-class="{'visible': showRecentSearch}">
       <div class="recent-list-header">
         Recent Searches
       </div>
-      <div class="recent-list-delete" ng-if="recentSearches.length > 0" tabindex="0" ng-click="deleteRecentSearches($event)" ng-keypress="deleteRecentSearches($event)">DELETE ALL</div>
+      <div class="recent-list-delete" ng-if="recentSearches.length > 0" ng-click="deleteRecentSearches($event)" ng-keypress="deleteRecentSearches($event)">DELETE ALL</div>
       <div class="recent-list-no-result" ng-if="recentSearches.length === 0">
         No History
       </div>
-      <div class="recent-list-item" tabindex="0" ng-repeat="search in recentSearches track by $index" ng-keypress="getSearchResultsOfSearch($event, search)" ng-click="getSearchResultsOfSearch($event, search)">{{search}}</div>
+      <div class="recent-list-item" tabindex="0" ng-repeat="search in recentSearches track by $index" ng-click="getSearchResultsOfSearch($event, search)">{{search}}</div>
     </div>
   </div>
 </div>
