@@ -32,7 +32,9 @@
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
-    "clean-css": "^4.1.2",
-    "gulp-minify-css": "^1.2.4"
+    "gulp-imagemin": "^3.2.0",
+    "gulp-minify-css": "^1.2.4",
+    "path": "^0.12.7",
+    "sw-precache": "^5.1.1"
   }
 }

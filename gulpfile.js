@@ -11,13 +11,19 @@
   var minifyCSS = require('gulp-minify-css');
   var concat = require('gulp-concat');
   var uglify = require('gulp-uglify');
+  var imagemin = require('gulp-imagemin');
   var runSequence = require('run-sequence');
+  // sw related confs
+
+  var sw_precache_config = require('./docs/js/service-worker/sw.conf.js');
+  var path = require('path');
+  var swPrecache = require('sw-precache');
 
   // Bower dependencies Dependencies filesarray
   var appPath = './docs/';
   var bowerPath = 'bower_components/';
   var jsPath = 'js/assets/';
-
+  var swPath = 'js/service-worker';
   var dependencies = [
     appPath + bowerPath + 'angular/angular.js'
   ];
@@ -38,6 +44,9 @@
 
   var fontFiles = [
     appPath + 'fonts/*',
+  ];
+  var imgFiles = [
+    appPath + 'img/*',
   ];
   // Gulp task to SASS to CSS compilation for proc env. w/o sourcemaps
   gulp.task('sass', function() {
@@ -99,10 +108,16 @@
     return gulp.src(fontFiles)
       .pipe(gulp.dest(appPath + 'dist/fonts'));
   });
+  // Gulp task for image minification
+  gulp.task('images', function() {
+    gulp.src(imgFiles)
+      .pipe(imagemin())
+      .pipe(gulp.dest(appPath + 'dist/img'));
+  });
 
   //Build task for setting up dependencies and building css from sass on production.
   gulp.task('build', [], function() {
-    runSequence('depUgligy', 'jsUgligy', 'sass', 'cssUgligy', 'fonts');
+    runSequence('depUgligy', 'jsUgligy', 'sass', 'cssUgligy', 'fonts', 'images', 'generate-service-worker');
   });
 
   // Watch task for local development.
@@ -115,8 +130,15 @@
     gulp.watch(appPath + 'js/**/*.js', ['jsUgligy']);
   });
 
+  // Gulp watch main task
   gulp.task('watch', [], function() {
     runSequence('watch:css', 'watch:js');
+  });
+
+  // Gulp Task for generating service worker file.
+  gulp.task('generate-service-worker', function() {
+    var serviceWorkerFile = path.join('./docs', 'service-worker.js');
+    return swPrecache.write(serviceWorkerFile, sw_precache_config);
   });
 
 }());

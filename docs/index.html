@@ -18,7 +18,21 @@
     <footer class="footer" ng-include="'html/footer.html'"></footer>
 
     <!-- Adding Script in the last for performance -->
-
+      <!-- ======= -->
+      <!-- Scripts -->
+      <!-- ======= -->
+      <!-- In production use:
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+      -->
+      <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+          console.log('Service Worker registered');
+        }).catch(function(err) {
+          console.log('Service Worker registration failed: ', err);
+        });
+      }
+      </script>
     <!-- Adding Bower dependencies as minified file -->
     <script type="text/javascript" src="dist/js/dependencies.min.js"></script>
     <!-- Importing configuration for the app -->
