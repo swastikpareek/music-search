@@ -1,7 +1,7 @@
-#MUSIC SEARCH#
+# MUSIC SEARCH #
 #### - Powered by Spotify ####
 
-##META##
+## META ##
 Simple Angular 1.0 based application which uses spotify API to get the
 artists and albums and shows a basic details about them.
 
