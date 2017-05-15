@@ -113,11 +113,15 @@
           margin: 0;
           font-size: 24px;
         }
-
+        text-align: center;
         color: $light-violet-pallete;
         &.pink{
           color: $pink-pallete;
         }
+      }
+      &--description{
+         font-size: 12px;
+         margin: 15px 0 0 0;
       }
     }
     .initial-screen{
