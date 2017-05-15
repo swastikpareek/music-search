@@ -385,6 +385,7 @@ body {
   .search-results .no-results--headline {
     margin: 30px 20px;
     font-size: 16px;
+    text-align: center;
     color: #454756; }
     @media screen and (min-width: 768px) {
       .search-results .error-screen--headline,
@@ -394,6 +395,10 @@ body {
     .search-results .error-screen--headline.pink,
     .search-results .no-results--headline.pink {
       color: #c34473; }
+  .search-results .error-screen--description,
+  .search-results .no-results--description {
+    font-size: 12px;
+    margin: 15px 0 0 0; }
   .search-results .initial-screen {
     display: none;
     text-align: center;
