@@ -16,7 +16,8 @@
     <div class="error-screen"  ng-if="screenState === 'error'">
       <img src="img/Magnify@2x.png"/>
       <div class="error-screen--headline pink">
-        Some Error Occured
+        <div>Some Error Occured</div>
+        <div class="error-screen--description pink">Try checking your internet connection</div>
       </div>
     </div>
   <div class="results" ng-if="screenState === 'results'">
