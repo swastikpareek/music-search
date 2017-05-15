@@ -558,7 +558,7 @@ body {
       line-height: 0;
       overflow: hidden;
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: cover;
       -moz-filter: blur(0px);
       -o-filter: blur(0px);
       -ms-filter: blur(0px);
@@ -860,7 +860,8 @@ body {
         padding: 10px 0;
         display: -moz-flex;
         display: -ms-flexbox;
-        display: flex; }
+        display: flex;
+        width: 100%; }
         .item--content--list--item--left {
           position: relative;
           display: none;
@@ -880,7 +881,10 @@ body {
             bottom: 0;
             background-color: rgba(33, 33, 33, 0.35); }
         .item--content--list--item--right {
-          padding: 10px 0; }
+          padding: 10px 0;
+          -moz-flex: 1;
+          -ms-flex: 1;
+          flex: 1; }
           @media screen and (min-width: 768px) {
             .item--content--list--item--right {
               padding: 15px 0 15px 20px; } }

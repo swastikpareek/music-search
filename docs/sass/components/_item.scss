@@ -112,6 +112,7 @@
       &--item{
         padding: 10px 0;
         @include flexbox;
+        width: 100%;
         &--left{
           position: relative;
           display: none;
@@ -134,6 +135,7 @@
         }
         &--right{
           padding: 10px 0;
+          @include flex(1);
           @media #{$ipp}{
             padding: 15px 0 15px 20px;
           }

@@ -6,11 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
     <title>Music Search</title>
-    <!-- Restting and normalising css for browser consistency-->
-    <link rel="stylesheet" type="text/css" href="bower_components/reset-css/reset.css">
-    <link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css">
-     <!-- Importing local css files -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/all.min.css">
   </head>
 
   <body ng-controller="mainCtrl as $mainCtrl" class="initially-hidden" ng-class="{'has-loaded' : controllerReady}">
@@ -24,24 +20,8 @@
     <!-- Adding Script in the last for performance -->
 
     <!-- Adding Bower dependencies as minified file -->
-    <script type="text/javascript" src="js/dependencies.min.js"></script>
-
+    <script type="text/javascript" src="dist/js/dependencies.min.js"></script>
     <!-- Importing configuration for the app -->
-    <script type="text/javascript" src="js/config.js"></script>
-
-    <!-- Importing constants needed -->
-    <script type="text/javascript" src="js/assets/constants/constants.js"></script>
-
-    <!-- Injecting Services -->
-    <script type="text/javascript" src="js/assets/services/local-storage.js"></script>
-    <script type="text/javascript" src="js/assets/services/helper.js"></script>
-    <script type="text/javascript" src="js/assets/services/search.js"></script>
-
-    <!-- Injecting Directives -->
-    <script type="text/javascript" src="js/assets/directives/content-card.js"></script>
-    <script type="text/javascript" src="js/assets/directives/modal-box.js"></script>
-    <!-- Importing main controller file -->
-    <script type="text/javascript" src="js/assets/controllers/main.js"></script>
-    <script type="text/javascript" src="js/assets/controllers/search.js"></script>
+    <script type="text/javascript" src="dist/js/scripts.min.js"></script>
   </body>
 </html>

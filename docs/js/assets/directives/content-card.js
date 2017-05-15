@@ -21,24 +21,25 @@
             element[0].classList.add('animated');
           }, 0);
         },
-        controller: function($scope) {
-          // Simple function for getting label
-          $scope.getLabel = function(type) {
-            if (type === 'album') {
-              return 'Tracks';
-            } else if (type === 'artist') {
-              return 'Albums';
-            }
-          };
-          // Open modal function to emit open-modal event;
-          $scope.openModal = function(modalId, obj) {
-            var element = document.getElementById(modalId);
-            var event = new CustomEvent('open-modal', {
-              'detail': obj
-            });
-            element.dispatchEvent(event);
-          };
+        controller: 'contentCardCtrl',
+      };
+    }])
+    .controller('contentCardCtrl', ['$scope', function($scope) {
+      // Simple function for getting label
+      $scope.getLabel = function(type) {
+        if (type === 'album') {
+          return 'Tracks';
+        } else if (type === 'artist') {
+          return 'Albums';
         }
+      };
+      // Open modal function to emit open-modal event;
+      $scope.openModal = function(modalId, obj) {
+        var element = document.getElementById(modalId);
+        var event = new CustomEvent('open-modal', {
+          'detail': obj
+        });
+        element.dispatchEvent(event);
       };
     }]);
 

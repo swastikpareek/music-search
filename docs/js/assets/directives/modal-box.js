@@ -1,3 +1,6 @@
+/**
+ * Js file containing definition for modal-box directive
+ */
 (function() {
   'use strict';
 

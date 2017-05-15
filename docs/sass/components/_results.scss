@@ -92,7 +92,7 @@
       line-height: 0;
       overflow: hidden;
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: cover;
       @include filter(blur(0px));
       @include transform(scale(1));
       @extend %animationSlow;
